@@ -36,6 +36,13 @@ public class Employee {
         return id;
     }
 
+    public static int getCountId() {
+        return countId;
+    }
+
+    public static void setCountId(int countId) {
+        Employee.countId = countId;
+    }
 
     @Override
     public String toString() {
