@@ -27,7 +27,9 @@ public class Main {
         System.out.println("сумма зарплат отдела " + totalSalaryDep(3));
         System.out.println("средняя зарплата по отделу " + averageSalaryDep(3));
 
-        indexSalaryDep(10, 5);
+        indexSalaryDep(10,3);
+        printEmployeeInfo();
+
 
         printEnotherDepartament(5);
 
@@ -170,6 +172,7 @@ public class Main {
                 employee.setSalary((int) (employee.getSalary() * coeff));
             }
         }
+        System.out.println("Зарплата после индексации на " + percent+" %, отдела " + departament);
     }
 
     private static void printEnotherDepartament(int departament) {
