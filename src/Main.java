@@ -20,15 +20,17 @@ public class Main {
 
         indexSalary(15);
         printEmployeeInfo();
-        int counterId = 2;
-        System.out.println("минимальная зарплата в отделе " + minSalaryDep(2));
+
+
+        System.out.println("минимальная зарплата в отделе " + minSalaryDep(3));
         System.out.println("максимальная зарплата в отделе " + maxSalaryDep(1));
         System.out.println("сумма зарплат отдела " + totalSalaryDep(3));
         System.out.println("средняя зарплата по отделу " + averageSalaryDep(3));
 
         indexSalaryDep(10, 5);
-        printEmployeeInfo();
+
         printEnotherDepartament(5);
+
         printMinEmloyeeSalary(70000);
         printMaxEmloyeeSalary(60000);
 
@@ -113,7 +115,7 @@ public class Main {
         int min = Integer.MAX_VALUE;
         Employee employee = null; //??
         for (Employee employee1 : employees) {
-            if (employee1.getSalary() > min && employee1.getCountId() == departament) {
+            if (employee1.getSalary() < min && employee1.getDepartament() == departament) {
                 min = employee1.getSalary();
                 employee = employee1;
             }
@@ -125,7 +127,7 @@ public class Main {
         int max = Integer.MIN_VALUE;
         Employee employee = null; //??
         for (Employee employee1 : employees) {
-            if (employee1.getSalary() < max && employee1.getDepartament() == departament) {
+            if (employee1.getSalary() > max && employee1.getDepartament() == departament) {
                 max = employee1.getSalary();
                 employee = employee1;
             }
@@ -179,6 +181,7 @@ public class Main {
         }
 
     }
+
     private static void printMinEmloyeeSalary(int salary) {
         System.out.println("сотрудники отдела c меньшей зарплатой " + salary);
         for (Employee employee : employees) {
@@ -187,15 +190,16 @@ public class Main {
             }
         }
     }
-        private static void printMaxEmloyeeSalary(int salary){
-            System.out.println("сотрудники отдела c большей зарплатой " + salary);
-            for (Employee employee : employees) {
-                if (employee.getSalary() >= salary) {
-                    System.out.println(employee.getId() + " " + employee.getName() + " " + employee.getSalary());
-                }
+
+    private static void printMaxEmloyeeSalary(int salary) {
+        System.out.println("сотрудники отдела c большей зарплатой " + salary);
+        for (Employee employee : employees) {
+            if (employee.getSalary() >= salary) {
+                System.out.println(employee.getId() + " " + employee.getName() + " " + employee.getSalary());
             }
         }
     }
+}
 
 
 
