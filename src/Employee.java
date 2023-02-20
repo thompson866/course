@@ -1,9 +1,9 @@
 public class Employee {
-private String name;
-private int departament;
-private int salary;
-private int id;
-private static int countId = 1;
+    private String name;
+    private int departament;
+    private int salary;
+    private int id;
+    private static int countId = 1;
 
     public Employee(String name, int departament, int salary) {
         this.id = countId++;
@@ -36,9 +36,17 @@ private static int countId = 1;
         return id;
     }
 
-    @Override
-    public String toString(){
+    public static int getCountId() {
+        return countId;
+    }
 
-        return  name + departament+salary+id;
+    public static void setCountId(int countId) {
+        Employee.countId = countId;
+    }
+
+    @Override
+    public String toString() {
+
+        return "id:" + id + " ФИО " + name + ",зарплата " +salary +" отдел "+ departament;
     }
 }
