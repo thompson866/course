@@ -18,17 +18,23 @@ public class MainForEmployee {
 
         System.out.println("Высокая сложность");
         EmployeeBook employeeBook = new EmployeeBook();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 8; i++) {
             employeeBook.addEmployee(generate());
 
         }
 
-        employeeBook.deleteEmployee(1);
-        employeeBook.deleteEmployee("");
+        employeeBook.deleteEmployee("Иванов Иван Иванович");
+        employeeBook.printEmployeeInfo();
+        employeeBook.changeSalary(employeeBook.minSalaryDep(2).getName(), 50000);
+        employeeBook.changeDepartment(employeeBook.minSalaryDep(3).getName(),4);//косяк
+
+        employeeBook.printEmployeeInfo();
+        employeeBook.printEmployeeDep();
+
 
 
         //doEmployees();
-        employeeBook.printEmployeeInfo();
+
         System.out.println("сумма зарплат " + employeeBook.totalSalary());
         System.out.println("минимальная зарплата у " + employeeBook.minSalary());
         System.out.println("максимальная зарплата у " + employeeBook.maxSalary());
